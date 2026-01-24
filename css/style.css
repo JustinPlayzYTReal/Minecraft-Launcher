@@ -196,14 +196,14 @@ hr {
     justify-content: center;
 }
 
-/* 🔥 FIXED SECTION HERE */
+/* 🌶️ FIXED TITLE (no squish, higher, centers better) */
 #game-title {
-    width: 40vw;
-    height: auto;          /* removed forced distorting height */
-    margin-top: 6vw;
+    height: 11vw;          /* controls scale cleanly */
+    width: auto;           /* keeps aspect ratio */
+    margin-top: 3.2vw;     /* bumped up, OG launcher spacing */
+    object-fit: contain;
+    image-rendering: pixelated;
     animation: drop .5s linear forwards;
-    object-fit: contain;   /* keeps aspect correct */
-    image-rendering: pixelated; /* minecraft vibe */
 }
 
 #gameSelection {
@@ -216,21 +216,6 @@ hr {
     background-color: var(--ui-main);
 }
 
-.dropdownSelector {
-    position: absolute;
-    left: 1vw;
-    display: flex;
-    height: 4.5vw;
-    width: 27vw;
-    align-items: center;
-    justify-content: space-around;
-    transition: 0.3s;
-}
-
-.dropdownSelector:hover {
-    cursor: pointer;
-    background-color: var(--ui-main-light);
-}
 
 .centeredIcon {
     display: flex;
