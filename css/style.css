@@ -200,7 +200,7 @@ hr {
 #game-title {
     height: 11vw;          /* controls scale cleanly */
     width: auto;           /* keeps aspect ratio */
-    margin-top: 3.2vw;     /* bumped up, OG launcher spacing */
+    margin-top: 3.3vw;     /* bumped up, OG launcher spacing */
     object-fit: contain;
     image-rendering: pixelated;
     animation: drop .5s linear forwards;
