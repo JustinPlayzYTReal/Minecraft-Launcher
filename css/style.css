@@ -53,6 +53,7 @@ hr {
 }
 
 /* Error CSS */
+
 .error {
     display: none;
     position: absolute;
@@ -93,6 +94,7 @@ hr {
 }
 
 /* Sidebar CSS */
+
 .sidebar {
     height: 100vh;
     width: 16vw;
@@ -147,6 +149,7 @@ hr {
 }
 
 /* Header CSS */
+
 .mainPage {
     width: 84vw;
     background-color: var(--ui-main);
@@ -181,6 +184,7 @@ hr {
 }
 
 /* Body CSS */
+
 #game-bg {
     background-size: cover;
     background-position: center;
@@ -268,5 +272,376 @@ hr {
     font-size: 1.35vw;
 }
 
-/* (rest of file unchanged) */
+@keyframes drop {
+    0% {
+        transform: translateY(-300px) scaleY(0.9);
+        opacity: 0;
+    }
 
+    5% {
+        opacity: .7;
+    }
+
+    50% {
+        transform: translateY(0) scaleY(1);
+        opacity: 1;
+    }
+
+    65% {
+        transform: translateY(-17px) scaleY(.9);
+        opacity: 1;
+    }
+
+    75% {
+        transform: translateY(-22px) scaleY(.9);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0) scaleY(1);
+        opacity: 1;
+    }
+}
+
+/* Mods Menu CSS */
+
+#mods {
+    position: absolute;
+    display: none;
+    width: 84vw;
+    height: 91vh;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.modketplace-title {
+    margin: 4vh 0 1vh;
+    width: 58vw;
+}
+
+.modssubtitle {
+    font-size: 1.6vw;
+}
+
+#modsbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5vw 1.5vw;
+    padding: 4vh 0 7vh;
+}
+
+.modoption {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 18vw;
+    border: 0.5vw solid var(--ui-main);
+    transition: 0.1s;
+}
+
+.modoption:hover {
+    scale: 1.05;
+}
+
+.modoption img {
+    border: 0.3vw solid #AA0000;
+    image-rendering: pixelated;
+}
+
+.modoption.selected img {
+    border: 0.3vw solid #00AA00;
+}
+
+.modoption:hover img {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.moddetails {
+    background-color: var(--ui-main-lighter);
+    padding: 0.5vw;
+    height: -webkit-fill-available;
+    font-size: 1.3vw;
+}
+
+.modtitle {
+    font-size: 1.5vw;
+}
+
+.modauthor {
+    text-decoration: underline;
+}
+
+/* FAQ Menu CSS */
+
+#faq {
+    position: absolute;
+    display: none;
+    width: 84vw;
+    height: 91vh;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--ui-main-dark);
+    overflow-y: scroll;
+    font-size: 1.3vw;
+}
+
+.faqtitle {
+    font-size: 2.3vw;
+    padding-top: 3vh;
+}
+
+#faqbox {
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 11vw 7vh;
+    width: -webkit-fill-available;
+}
+
+.faqoption {
+    margin-bottom: 3vh;
+}
+
+.faqtext {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.faqsymbol {
+    font-size: 2vw;
+}
+
+/* Installations Menu CSS */
+
+#installations {
+    position: absolute;
+    display: none;
+    width: 84vw;
+    height: 91vh;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--ui-main-dark);
+    overflow-y: scroll;
+}
+
+#installationsbox {
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 0 7vh;
+}
+
+.installationOptions {
+    display: flex;
+    height: 9vh;
+    width: 74vw;
+    align-items: center;
+    font-size: 1.2vw;
+}
+
+.installationOptions:hover, .installationBox:hover {
+    background-color: var(--ui-main-light);
+}
+
+.installationOption {
+    position: absolute;
+    left: 7vw;
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+    cursor: pointer;
+}
+
+.installationBox {
+    width: 3.5vh;
+    height: 3.5vh;
+    appearance: none;
+    border: 0.3vw solid #0c6e3d;
+    pointer-events: none;
+}
+
+.installationBox:checked {
+  background-color: var(--ui-select);
+}
+
+.installationBox:checked:hover {
+    background-color: #0f9a54;
+}
+
+.installationOption img {
+    width: 5.5vh;
+    height: 5.5vh;
+}
+
+.installationOptionText {
+    display: grid;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Patch Notes Menu CSS */
+
+#patchNotes {
+    position: absolute;
+    display: none;
+    width: 84vw;
+    height: 91vh;
+    flex-direction: column;
+    background-color: var(--ui-main-dark);
+    overflow-y: scroll;
+}
+
+.patchnotes-title {
+    font-size: 1.4vw;
+}
+
+.versionscontainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    margin: 0.5vh 0 1.5vh;
+}
+
+.versionBox {
+    width: 2.5vh;
+    height: 2.5vh;
+    appearance: none;
+    border: 0.3vw solid #0c6e3d;
+    cursor: pointer;
+}
+
+.versionBox:checked {
+    background-color: var(--ui-select);
+}
+
+#patchnotesbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5vw 1.5vw;
+    padding: 2vh;
+}
+
+.patchnote {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 17vw;
+    background-color: black;
+    transition: 0.1s;
+}
+
+.patchnote:hover {
+    background-color: var(--ui-main);
+}
+
+.patchnote img {
+    margin: 0.5vw;
+    image-rendering: pixelated;
+}
+
+.patchnotedetails {
+    border-top: 0.1vh solid var(--ui-main-light);
+    padding: 0.5vw 1vw 1vw;
+    height: -webkit-fill-available;
+    font-size: 1.3vw;
+}
+
+#notescreen {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    background: var(--ui-main);
+    width: 100vw;
+    height: 100vh;
+    user-select: text;
+}
+
+.notescreenheader {
+    display: flex;
+    align-items: center;
+    font-size: 1.5vw;
+    padding: 1.5vw;
+}
+
+.notescreenheader svg {
+    position: absolute;
+    cursor: pointer;
+    right: 1.5vw;
+    width: 3vw;
+    height: 3vw;
+}
+
+#notescreen hr {
+    width: 100vw;
+}
+
+.notescreendetails {
+    text-align: left;
+    width: 75vw;
+    margin: 3vh 0;
+    overflow-y: scroll;
+}
+
+.notescreendetails .date {
+    color: var(--text-secondary);
+    font-size: 1.1vw;
+}
+
+.notescreendetails ul {
+    list-style: revert;
+    padding: revert;
+}
+
+/* Dropdown Menu CSS */
+
+.dropdownMenu {
+    position: absolute;
+    left: 1vw;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdownOptions {
+    position: absolute;
+    display: flex;
+    height: 5vw;
+    width: 27vw;
+    align-items: center;
+    background-color: var(--ui-main-dark);
+    z-index: 999;
+    font-size: 1.1vw;
+}
+
+.dropdownOptions:hover {
+    background-color: var(--ui-select);
+}
+
+.dropdownOption {
+    position: absolute;
+    left: 2vw;
+    display: flex;
+    gap: 0.5vw;
+    align-items: center;
+}
+
+.dropdownOption img {
+    width: 2.5vw;
+    height: 2.5vw;
+}
+
+.dropdownOptionText {
+    display: grid;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.versionText {
+    margin-right: 4.25vw;
+    display: grid;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1.1vw;
+}
