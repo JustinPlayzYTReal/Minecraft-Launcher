@@ -98,10 +98,11 @@ hr {
     height: 100vh;
     width: 16vw;
     background-color: var(--ui-main);
-    position: relative;     /* FIX */
-    z-index: 9999;          /* FIX */
+    position: relative;
+    z-index: 9999; /* FIX */
+    display: flex;
+    flex-direction: column;
 }
-
 
 .sidebarOptions {
     display: flex;
