@@ -1,5 +1,5 @@
 # <img src=".github/assets/logo.png" alt="Ampler Logo" align="right" width="150px"> Minecraft Launcher v1.4.00
- A minecraft themed launcher for Eaglercraft!<br>
+ A minecraft themed launcher<br>
  Containing some of the best clients all in one place!
 
 
@@ -45,4 +45,4 @@
 
 <hr>
 
->__Finally [here](https://irv77.github.io/AmplerLauncher/) is the live version of the code!__
+>__Finally [here](https://justinplayzytreal.github.io/Minecraft-Launcher/) is the live version of the code!__
