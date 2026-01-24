@@ -159,6 +159,16 @@ hr {
     overflow: hidden;     /* FIX */
     z-index: 2;           /* FIX */
 }
+/* FIX — Ensure main panels stay inside mainPage instead of covering sidebar */
+#game-bg,
+#mods,
+#faq,
+#installations,
+#patchNotes,
+#notescreen {
+    width: 100% !important;     /* instead of 84vw */
+    left: 0 !important;         /* prevents overlay */
+}
 
 
 .gameHeader {padding: 1.8vw 1.8vw 0;}
