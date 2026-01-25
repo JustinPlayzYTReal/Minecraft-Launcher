@@ -20,29 +20,13 @@
 </head>
 
 <body>
-    <div id="notescreen"></div>
 
-    <div id="naerror" class="error">
-        <div>
-            <p style="margin-left: 1vw;" class="bolded">SORRY!</p>
-            <p style="color: goldenrod;" id="errortext">This feature hasn't been made yet.</p>
-        </div>
-    </div>
-
-    <div id="screenerror" class="error">
-        <div>
-            <p style="margin-left: 1vw;" class="bolded">ERROR!</p>
-            <p>Currently this screen resolution is buggy.</p>
-        </div>
-    </div>
-
-    <!-- ⬇⬇⬇ FIXED SIDEBAR WRAPPER ⬇⬇⬇ -->
+    <!-- SIDEBAR -->
     <div class="sidebar">
-
         <div onclick="webedition()" id="gtabs2" class="sidebarOptions selected">
             <img src="./assets/images/sidebar/i-web.png">
             <div class="gTabsText">
-                <p class="eaglercraftText"> MINECRAFT : </p>
+                <p class="eaglercraftText">MINECRAFT :</p>
                 <p>Web Edition</p>
             </div>
         </div>
@@ -50,7 +34,7 @@
         <div onclick="moddededition()" id="gtabs3" class="sidebarOptions">
             <img src="./assets/images/sidebar/i-modded.png">
             <div class="gTabsText">
-                <p class="eaglercraftText"> MINECRAFT : </p>
+                <p class="eaglercraftText">MINECRAFT :</p>
                 <p>Modded Editions</p>
             </div>
         </div>
@@ -58,29 +42,27 @@
         <div onclick="eaglercontrols()" id="gtabs4" class="sidebarOptions">
             <img src="./assets/images/sidebar/i-controls.png">
             <div class="gTabsText">
-                <p class="eaglercraftText"> MINECRAFT : </p>
+                <p class="eaglercraftText">MINECRAFT :</p>
                 <p>Mobile/Controller</p>
             </div>
         </div>
 
         <div id="gtabs5" class="sidebarOptions sidebarBottom" onclick="errorNA('credits')">
-            <img src="./assets/images/sidebar/m-credits.png">
-            <div class="gTabsText"><p>Credits</p></div>
+            <img src="./assets/images/sidebar/m-credits.png"><div class="gTabsText"><p>Credits</p></div>
         </div>
 
         <div id="gtabs6" class="sidebarOptions sidebarBottom" onclick="errorNA('settings')">
-            <img src="./assets/images/sidebar/m-settings.png">
-            <div class="gTabsText"><p>Settings</p></div>
+            <img src="./assets/images/sidebar/m-settings.png"><div class="gTabsText"><p>Settings</p></div>
         </div>
 
         <div class="launcherVersion"><p>v1.4.00</p></div>
     </div>
-    <!-- ⬆⬆⬆ FIXED SIDEBAR WRAPPER ⬆⬆⬆ -->
 
+    <!-- MAIN PAGE -->
     <div class="mainPage">
+
         <div class="gameHeader">
             <p id="gameedition" class="currentGame bolded">MINECRAFT WEB EDITION</p>
-
             <ul class="gameTabs">
                 <li id="header1" class="headerButtons selected" onclick="playheader()">Play</li>
                 <li id="header2" style="display: none;" class="headerButtons" onclick="modsheader()">Mods</li>
@@ -121,6 +103,7 @@
             </div>
         </div>
 
+        <!-- BOTTOM BAR -->
         <div id="gameSelection">
             <div class="dropdownSelector" onclick="dropdowntoggle()">
                 <div style="display: flex; gap: 1vw;">
@@ -131,22 +114,15 @@
                         <p id="gametitle" class="bolded">Latest release</p>
                         <p id="gameversion">1.12.2-u2</p>
                     </div>
-                    <div id="dropdownuparrow" class="centeredIcon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                             viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"
-                             stroke-linecap="round" stroke-linejoin="round" class="dropdownIcon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M6 9l6 6l6 -6" />
-                        </svg>
-                    </div>
                 </div>
             </div>
-
-            <div id="dropdn" class="dropdownMenu" style="visibility: hidden;"></div>
             <a id="playbutton" href="mc/1.12.2"><div id="mainbutton" class="playButton"></div></a>
             <div class="username centeredIcon bolded"><p id="username">Generic User</p></div>
         </div>
+
     </div>
+
     <script src="./js/index.js"></script>
 </body>
 </html>
+
