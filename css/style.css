@@ -155,13 +155,14 @@ hr {
 /* Header CSS */
 
 .mainPage {
-    width: 84vw;
-    background-color: var(--ui-main);
     position: relative;
-    z-index: 1;
+    width: calc(100vw - 16vw);
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
+
 
 .gameHeader {padding: 1.8vw 1.8vw 0;}
 .currentGame {font-size: 1.2vw;}
