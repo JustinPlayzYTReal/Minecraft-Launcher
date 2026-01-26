@@ -102,6 +102,7 @@ hr {
     display: flex;
     flex-direction: column;
     position: relative;
+    z-index: 999;
 }
 
 .sidebarOptions {
@@ -156,6 +157,8 @@ hr {
 .mainPage {
     width: 84vw;
     background-color: var(--ui-main);
+    position: relative;
+    z-index: 1;
 }
 
 .gameHeader {padding: 1.8vw 1.8vw 0;}
@@ -197,6 +200,7 @@ hr {
     width: 84vw;
     height: 84vh;
     justify-content: center;
+    z-index: 0;
 }
 
 #game-title {
