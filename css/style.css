@@ -131,7 +131,6 @@ hr {
     border-left: 0.4vw solid var(--ui-select);
 }
 
-#gtabs1 img {width: 3vw;}
 #gtabs2 img, #gtabs3 img, #gtabs4 img {width: 2.5vw;}
 #gtabs5 {bottom: 7.5vw; width: 14.5vw;}
 #gtabs6 {bottom: 2.5vw; width: 14.5vw;}

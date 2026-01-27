@@ -404,12 +404,12 @@ function dropdowntoggle(){
 function resetTabSelected() {
     while (dropdown.firstChild) {dropdown.removeChild(dropdown.firstChild)};
     while (installations.firstChild) {installations.removeChild(installations.firstChild)};
-    for (var i = 1; i < 6; i++) { 
-        let gtabs = document.getElementById('gtabs' + [i]);
-        let headers = document.getElementById('header' + [i]);
-        gtabs.classList.remove('selected');
-        headers.style.display = "block";
-    };
+    document.querySelectorAll('.sidebarOptions').forEach((tab) => {
+        tab.classList.remove('selected');
+    });
+    document.querySelectorAll('.headerButtons').forEach((header) => {
+        header.style.display = "block";
+    });
     playheader();
 }
 
