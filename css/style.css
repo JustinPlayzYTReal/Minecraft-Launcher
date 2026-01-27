@@ -31,6 +31,8 @@ body {
     --ui-main-dark: #131313;
     --text-secondary: #cccccc;
     --ui-select: #008542;
+    --header-offset: 5vw;
+    --footer-height: 4.5vw;
 }
 
 ul {
@@ -167,10 +169,12 @@ hr {
 
 
 .gameHeader {
-    padding: 1.8vw 1.8vw 0;
+    padding: 0.6vw 1.8vw 0;
     position: relative;
     z-index: 1500;
     pointer-events: auto;
+    min-height: var(--header-offset);
+    background-color: var(--ui-main);
 }
 .currentGame {font-size: 1.2vw;}
 
@@ -209,7 +213,7 @@ hr {
     background-repeat: no-repeat;
     position: absolute;
     top: 0;
-    bottom: 4.5vw;
+    bottom: var(--footer-height);
     display: flex;
     width: 84vw;
     height: auto;
@@ -232,7 +236,7 @@ hr {
     position: relative;
     bottom: 0;
     width: 84vw;
-    height: 4.5vw;
+    height: var(--footer-height);
     justify-content: space-around;
     display: flex;
     background-color: var(--ui-main);
@@ -331,7 +335,8 @@ hr {
     position: absolute;
     display: none;
     width: 84vw;
-    height: 91vh;
+    top: var(--header-offset);
+    height: calc(100vh - var(--header-offset));
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
@@ -401,7 +406,8 @@ hr {
     position: absolute;
     display: none;
     width: 84vw;
-    height: 91vh;
+    top: var(--header-offset);
+    height: calc(100vh - var(--header-offset));
     flex-direction: column;
     align-items: center;
     background-color: var(--ui-main-dark);
@@ -441,7 +447,8 @@ hr {
     position: absolute;
     display: none;
     width: 84vw;
-    height: 91vh;
+    top: var(--header-offset);
+    height: calc(100vh - var(--header-offset));
     flex-direction: column;
     align-items: center;
     background-color: var(--ui-main-dark);
@@ -508,7 +515,8 @@ hr {
     position: absolute;
     display: none;
     width: 84vw;
-    height: 91vh;
+    top: var(--header-offset);
+    height: calc(100vh - var(--header-offset));
     flex-direction: column;
     background-color: var(--ui-main-dark);
     overflow-y: scroll;

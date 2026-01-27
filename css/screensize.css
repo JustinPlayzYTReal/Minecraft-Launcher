@@ -53,12 +53,17 @@ hr {
     width: 94.5vw;
 }
 
+body {
+  --header-offset: 6vw;
+  --footer-height: 5.6vw;
+}
+
 .currentGame {
   font-size: 1.4vw;
 }
 
 .gameHeader {
-  padding: 2vw 2.5vw 1vw;
+  padding: 0.9vw 2.5vw 0;
 }
 
 .headerButtons {
