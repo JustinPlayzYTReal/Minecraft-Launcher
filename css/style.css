@@ -225,7 +225,7 @@ hr {
 #game-title {
     width: 543px;
     height: 148px;
-    margin-top: 6vw;
+    margin-top: 8vw;
     animation: drop .5s linear forwards;
     pointer-events: none;
 }
