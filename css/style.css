@@ -223,10 +223,8 @@ hr {
 }
 
 #game-title {
-    width: clamp(220px, 24vw, 360px);
-    max-width: 70%;
-    height: auto;
-    aspect-ratio: 543 / 148;
+    width: 543px;
+    height: 148px;
     margin-top: 6vw;
     animation: drop .5s linear forwards;
     pointer-events: none;
