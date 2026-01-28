@@ -223,11 +223,17 @@ hr {
 }
 
 #game-title {
-    width: 543px;
-    height: 148px;
+    width: 40vw;
+    height: auto;
+    aspect-ratio: 543 / 148;
     margin-top: 8vw;
     animation: drop .5s linear forwards;
     pointer-events: none;
+}
+
+#game-title.web-title {
+    width: 543px;
+    height: 148px;
 }
 
 #gameSelection {
