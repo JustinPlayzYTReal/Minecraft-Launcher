@@ -71,7 +71,7 @@
                     <li id="header2" style="display: none;" class="headerButtons" onclick="modsheader()">Mods</li>
                     <li id="header3" class="headerButtons" onclick="faqsheader()">FAQ</li>
                     <li id="header4" class="headerButtons" onclick="installationheader()">Installations</li>
-                    <li id="header5" class="headerButtons" onclick="errorNA('skins')">Skins</li>
+                    <li id="header5" class="headerButtons" onclick="skinsheader()">Skins</li>
                     <li id="header6" class="headerButtons" onclick="patchnotesheader()">Patch Notes</li>
                 </ul>
         </div>
@@ -84,6 +84,32 @@
             <p class="bolded faqtitle">Frequently Asked Questions</p>
             <p>Here are some frequently asked questions about Minecraft Launcher.</p>
             <div id="faqbox"></div>
+        </div>
+        <div id="skins">
+            <div class="skinsPanel">
+                <div class="skinsHeader bolded">Upload a skin</div>
+                <div class="skinsBody">
+                    <div class="skinsPreview">
+                        <div class="skinsPreviewFrame">
+                            <img id="skinPreview" alt="Skin preview">
+                        </div>
+                        <p id="skinStatus">No skin uploaded yet.</p>
+                    </div>
+                    <div class="skinsControls">
+                        <label class="skinsUpload">
+                            <input id="skinFile" type="file" accept="image/png">
+                            <span class="skinsUploadButton bolded">Choose PNG</span>
+                            <span class="skinsUploadHint">64x64 or 64x32</span>
+                        </label>
+                        <div class="skinsModel">
+                            <p class="bolded">Model</p>
+                            <label><input type="radio" name="skinModel" value="default" checked> Default (Steve)</label>
+                            <label><input type="radio" name="skinModel" value="slim"> Slim (Alex)</label>
+                        </div>
+                        <button id="skinClear" class="skinsClearButton">Clear skin</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="installations"><div id="installationsbox"></div></div>
         <div id="game-bg" style="background-image: url(./assets/images/web-edition.jpg?v=20260129);">

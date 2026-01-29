@@ -394,6 +394,11 @@ function installationheader(){
     document.getElementById('installations').style.display = "flex";
     document.getElementById('header4').classList.add('selected');
 }
+function skinsheader(){
+    resetHeaderSelected();
+    document.getElementById('skins').style.display = "block";
+    document.getElementById('header5').classList.add('selected');
+}
 function patchnotesheader(){
     resetHeaderSelected();
     generatenotes();
@@ -437,6 +442,7 @@ function resetHeaderSelected() {
     document.getElementById('gameSelection').style.display = "none";
     document.getElementById('mods').style.display = "none";
     document.getElementById('faq').style.display = "none";
+    document.getElementById('skins').style.display = "none";
     document.getElementById('installations').style.display = "none";
     document.getElementById('patchNotes').style.display = "none";
 }
@@ -452,8 +458,134 @@ function preventMotion(event)
     event.stopPropagation();
 }
 
+// Skins Page
+const SKIN_STORAGE_KEY = "launcher.customSkin";
+const SKIN_MODEL_KEY = "launcher.customSkinModel";
+const SKIN_PROFILE_NAMESPACES = [
+    "_eaglercraft_1.12",
+    "_eaglercraftX",
+    "_eaglercraft_1.8"
+];
+
+function getStoredSkin() {
+    try { return JSON.parse(localStorage.getItem(SKIN_STORAGE_KEY)); } catch { return null; }
+}
+
+function updateSkinPreview() {
+    const preview = document.getElementById("skinPreview");
+    const status = document.getElementById("skinStatus");
+    const skin = getStoredSkin();
+    if (!skin || !skin.data) {
+        preview.removeAttribute("src");
+        status.textContent = "No skin uploaded yet.";
+        return;
+    }
+    preview.src = `data:image/png;base64,${skin.data}`;
+    status.textContent = `Saved (${skin.width}x${skin.height})`;
+}
+
+function saveSkin(dataUrl, width, height, model) {
+    const base64 = dataUrl.split(",")[1];
+    const skin = {
+        data: base64,
+        width,
+        height,
+        model,
+        updated: new Date().toISOString()
+    };
+    localStorage.setItem(SKIN_STORAGE_KEY, JSON.stringify(skin));
+    localStorage.setItem(SKIN_MODEL_KEY, model);
+    updateSkinPreview();
+}
+
+function clearSkin() {
+    localStorage.removeItem(SKIN_STORAGE_KEY);
+    updateSkinPreview();
+}
+
+function applySkinToNamespace(namespace, skin) {
+    if (!skin) return;
+    const key = `${namespace}.profile`;
+    let profile = {};
+    try {
+        profile = JSON.parse(localStorage.getItem(key)) || {};
+    } catch {
+        profile = {};
+    }
+    profile.customSkin = {
+        model: skin.model === "slim" ? "slim" : "default",
+        data: skin.data
+    };
+    if (!profile.presetSkin) profile.presetSkin = "CUSTOM";
+    if (!profile.username) profile.username = "Player";
+    localStorage.setItem(key, JSON.stringify(profile));
+}
+
+function applySkinToAllGames() {
+    const skin = getStoredSkin();
+    if (!skin) return;
+    SKIN_PROFILE_NAMESPACES.forEach((ns) => applySkinToNamespace(ns, skin));
+}
+
+function initSkinsUI() {
+    const fileInput = document.getElementById("skinFile");
+    const clearButton = document.getElementById("skinClear");
+    const modelInputs = document.querySelectorAll("input[name='skinModel']");
+    const storedModel = localStorage.getItem(SKIN_MODEL_KEY);
+    if (storedModel) {
+        modelInputs.forEach((input) => {
+            if (input.value === storedModel) input.checked = true;
+        });
+    }
+
+    fileInput.addEventListener("change", () => {
+        const file = fileInput.files && fileInput.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            const dataUrl = event.target.result;
+            const img = new Image();
+            img.onload = () => {
+                const valid = (img.width === 64 && (img.height === 64 || img.height === 32));
+                if (!valid) {
+                    alert("Skins must be 64x64 or 64x32 PNG files.");
+                    return;
+                }
+                const selectedModel = document.querySelector("input[name='skinModel']:checked").value;
+                saveSkin(dataUrl, img.width, img.height, selectedModel);
+                applySkinToAllGames();
+            };
+            img.src = dataUrl;
+        };
+        reader.readAsDataURL(file);
+    });
+
+    modelInputs.forEach((input) => {
+        input.addEventListener("change", () => {
+            const skin = getStoredSkin();
+            if (!skin) return;
+            skin.model = input.value;
+            localStorage.setItem(SKIN_STORAGE_KEY, JSON.stringify(skin));
+            localStorage.setItem(SKIN_MODEL_KEY, input.value);
+            applySkinToAllGames();
+        });
+    });
+
+    clearButton.addEventListener("click", () => {
+        clearSkin();
+    });
+
+    document.getElementById("playbutton").addEventListener("click", () => {
+        applySkinToAllGames();
+    });
+
+    updateSkinPreview();
+}
+
 generateprofile(1);
 generategames("./assets/json/base.json");
 generatefaqs();
 generatelaunchers("./assets/json/base.json");
 console.clear();
+
+initSkinsUI();

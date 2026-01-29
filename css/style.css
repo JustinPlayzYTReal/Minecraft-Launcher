@@ -440,6 +440,126 @@ hr {
     width: -webkit-fill-available;
 }
 
+/* Skins Menu CSS */
+
+#skins {
+    position: absolute;
+    display: none;
+    width: 84vw;
+    top: var(--header-offset);
+    height: calc(100vh - var(--header-offset));
+    background-color: var(--ui-main-dark);
+    color: white;
+    padding: 3vh 3vw 6vh;
+    box-sizing: border-box;
+}
+
+.skinsPanel {
+    background: var(--ui-main);
+    border: 0.15vw solid var(--ui-main-light);
+    border-radius: 0.6vw;
+    padding: 2vh 2vw;
+    max-width: 60vw;
+}
+
+.skinsHeader {
+    font-size: 1.6vw;
+    margin-bottom: 2vh;
+}
+
+.skinsBody {
+    display: flex;
+    gap: 3vw;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.skinsPreview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2vh;
+}
+
+.skinsPreviewFrame {
+    width: 12vw;
+    height: 12vw;
+    min-width: 140px;
+    min-height: 140px;
+    background: var(--ui-main-dark);
+    border: 0.15vw solid var(--ui-main-light);
+    border-radius: 0.4vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#skinPreview {
+    width: 80%;
+    height: 80%;
+    image-rendering: pixelated;
+}
+
+#skinStatus {
+    font-size: 1.1vw;
+    color: #cfcfcf;
+    text-align: center;
+    max-width: 18vw;
+}
+
+.skinsControls {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4vh;
+    min-width: 18vw;
+}
+
+.skinsUpload {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8vh;
+}
+
+.skinsUpload input {
+    display: none;
+}
+
+.skinsUploadButton {
+    background: #0f8a43;
+    color: white;
+    border-radius: 0.4vw;
+    padding: 0.8vh 1.2vw;
+    text-align: center;
+    cursor: pointer;
+}
+
+.skinsUploadHint {
+    font-size: 1.05vw;
+    color: #bfbfbf;
+}
+
+.skinsModel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6vh;
+}
+
+.skinsModel label {
+    display: flex;
+    align-items: center;
+    gap: 0.6vw;
+    font-size: 1.1vw;
+}
+
+.skinsClearButton {
+    background: #333;
+    color: white;
+    border: 0.1vw solid #444;
+    border-radius: 0.4vw;
+    padding: 0.8vh 1.2vw;
+    cursor: pointer;
+}
+
 .faqoption {
     margin-bottom: 3vh;
 }
