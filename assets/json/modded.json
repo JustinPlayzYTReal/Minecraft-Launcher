@@ -7,10 +7,10 @@
        "active": true
     },
     {
-       "title": "Eaglerforge",
+       "title": "Mineforge",
        "version": "1.8.8-v1.3.2",
-       "icon": "./assets/images/icons/eaglerforge.png",
-       "link": "./mc/eaglerforge/",
+       "icon": "./assets/images/icons/Mineforge.png",
+       "link": "./mc/Mineforge/",
        "active": true
     },
     {

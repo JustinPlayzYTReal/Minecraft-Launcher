@@ -28,7 +28,7 @@
        "active": true
     },
     {
-       "title": "Eaglercraft 1.6.4",
+       "title": "Minecraft 1.6.4",
        "version": "1.6.4-25w17a",
        "icon": "./assets/images/mc-icons/hay-bale.png",
        "link": "./mc/1.6.4/",
@@ -42,84 +42,84 @@
        "active": true
     },
     {
-       "title": "Eaglercraft 1.2.5",
+       "title": "Minecraft 1.2.5",
        "version": "1.2.5",
        "icon": "./assets/images/mc-icons/jungle-log.png",
        "link": "./mc/1.2.5/",
        "active": false
     },
     {
-       "title": "Eaglercraft Beta 1.7.3",
+       "title": "Minecraft Beta 1.7.3",
        "version": "b1.7.3",
        "icon": "./assets/images/mc-icons/sticky-piston.png",
        "link": "./mc/b1.7.3/",
        "active": false
     },
     {
-       "title": "Eaglercraft Beta 1.4",
+       "title": "Minecraft Beta 1.4",
        "version": "b1.4_01-25w21b",
        "icon": "./assets/images/mc-icons/trapped-chest.png",
        "link": "./mc/b1.4/",
        "active": false
     },
     {
-       "title": "Eaglercraft Beta 1.3",
+       "title": "Minecraft Beta 1.3",
        "version": "b1.3_01-23w49a",
        "icon": "./assets/images/mc-icons/red-bed.png",
        "link": "./mc/b1.3/",
        "active": false
     },
     {
-       "title": "Eaglercraft Beta 1.1",
+       "title": "Minecraft Beta 1.1",
        "version": "b1.1_02-25w20a",
        "icon": "./assets/images/mc-icons/oak-leaves.png",
        "link": "./mc/b1.1/",
        "active": false
     },
     {
-       "title": "Eaglercraft Alpha 1.2.6",
+       "title": "Minecraft Alpha 1.2.6",
        "version": "a1.2.6",
        "icon": "./assets/images/mc-icons/jack-o-lantern.png",
        "link": "./mc/a1.2.6/",
        "active": false
     },
     {
-       "title": "Eaglercraft Alpha 1.1.2",
+       "title": "Minecraft Alpha 1.1.2",
        "version": "a1.1.2_01-25w20b",
        "icon": "./assets/images/mc-icons/clay.png",
        "link": "./mc/a1.1.2/",
        "active": false
     },
     {
-       "title": "Eaglercraft Infdev",
+       "title": "Minecraft Infdev",
        "version": "inf",
        "icon": "./assets/images/mc-icons/monster-spawner.png",
        "link": "./mc/infdev/",
        "active": false
     },
     {
-       "title": "Eaglercraft Infdev WASM",
+       "title": "Minecraft Infdev WASM",
        "version": "inf-wasm",
        "icon": "./assets/images/mc-icons/monster-spawner-wasm.png",
        "link": "./mc/infdev-wasm/",
        "active": false
     },
     {
-       "title": "Eaglercraft Indev",
+       "title": "Minecraft Indev",
        "version": "inv",
        "icon": "./assets/images/mc-icons/furnace.png",
        "link": "./mc/indev/",
        "active": false
     },
     {
-       "title": "Eaglercraft Classic 0.30",
+       "title": "Minecraft Classic 0.30",
        "version": "c0.30",
        "icon": "./assets/images/mc-icons/tnt.png",
        "link": "./mc/c0.30/",
        "active": false
     },
     {
-       "title": "Eaglercraft Classic 0.30 WASM",
+       "title": "Minecraft Classic 0.30 WASM",
        "version": "c0.30-wasm",
        "icon": "./assets/images/mc-icons/tnt-wasm.png",
        "link": "./mc/c0.30-wasm/",

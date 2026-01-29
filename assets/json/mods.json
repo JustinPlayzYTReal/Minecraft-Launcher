@@ -50,7 +50,7 @@
   {
     "title": "Burmod WIP",
     "author": "Murturtle",
-    "description": "Client for eaglerforge (v0.2)",
+    "description": "Client for Mineforge (v0.2)",
     "icon": "./assets/images/mod-icons/missing.png",
     "link": "burmod.js",
     "active": false
@@ -90,7 +90,7 @@
   {
     "title": "Fullbright",
     "author": "Radmanplays",
-    "description": "Full bright mod for eaglerforge",
+    "description": "Full bright mod for Mineforge",
     "icon": "./assets/images/mod-icons/bright.png",
     "link": "fullbright.js",
     "active": false
@@ -138,7 +138,7 @@
   {
     "title": "Player Vision",
     "author": "Oeil-de-Lynx",
-    "description": "See other players in your Eaglerforge servers!",
+    "description": "See other players in your Mineforge servers!",
     "icon": "./assets/images/mod-icons/highlight.png",
     "link": "player-vision.js",
     "active": false
