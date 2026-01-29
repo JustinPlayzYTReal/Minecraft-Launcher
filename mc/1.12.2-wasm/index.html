@@ -19,6 +19,45 @@
 				if(window.location.href.indexOf("file:") === 0) {
 					alert("HTTP please, do not open this file locally, run a local HTTP server and load it via HTTP");
 				}else {
+					function applyLauncherSkin() {
+						var raw = null;
+						try { raw = window.localStorage.getItem("launcher.customSkin"); } catch(e) { return; }
+						if(!raw) return;
+						var skin = null;
+						try { skin = JSON.parse(raw); } catch(e) { return; }
+						if(!skin || !skin.data) return;
+						var model = (skin.model === "slim") ? "slim" : "default";
+						function mergeProfile(existing) {
+							var profile = {};
+							try { profile = existing ? JSON.parse(existing) : {}; } catch(e) { profile = {}; }
+							if(typeof profile !== "object" || profile === null) profile = {};
+							if(typeof profile.customSkin === "object" && profile.customSkin !== null) {
+								profile.customSkin.data = skin.data;
+								profile.customSkin.model = model;
+							} else {
+								profile.customSkin = skin.data;
+								profile.customSkinModel = model;
+								profile.customSkinObj = { data: skin.data, model: model };
+							}
+							profile.presetSkin = "CUSTOM";
+							return JSON.stringify(profile);
+						}
+						function writeKey(key) {
+							try {
+								var existing = window.localStorage.getItem(key);
+								window.localStorage.setItem(key, mergeProfile(existing));
+							} catch(e) {}
+						}
+						var namespaces = ["_eaglercraft_1.12", "_eaglercraftX", "_eaglercraft_1.8"];
+						for(var i = 0; i < namespaces.length; i++) {
+							var ns = namespaces[i];
+							writeKey(ns + ".profile");
+							writeKey(ns + ":profile");
+							writeKey(ns + "/profile");
+						}
+						writeKey("profile");
+					}
+					applyLauncherSkin();
 					
 					// %%%%%%%%% launch options %%%%%%%%%%%%
 					
