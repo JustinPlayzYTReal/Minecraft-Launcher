@@ -331,6 +331,7 @@ function webedition(){
     document.getElementById('game-bg').style.backgroundImage = 'url(./assets/images/web-edition.jpg)';
     document.getElementById('game-title').src = './assets/images/web-title.png';
     document.getElementById('game-title').classList.add('web-title');
+    document.getElementById('game-title').classList.remove('modded-title', 'controls-title');
     document.getElementById('gameedition').innerHTML = 'MINECRAFT WEB EDITION';
     document.getElementById('header2').style.display = 'none';
     document.getElementById('gtabs2').classList.add('selected');
@@ -343,7 +344,8 @@ function moddededition(){
     generatelaunchers(launcher);
     document.getElementById('game-bg').style.backgroundImage = 'url(./assets/images/modded-edition.jpg)';
     document.getElementById('game-title').src = './assets/images/modded-title.png';
-    document.getElementById('game-title').classList.remove('web-title');
+    document.getElementById('game-title').classList.remove('web-title', 'controls-title');
+    document.getElementById('game-title').classList.add('modded-title');
     document.getElementById('gameedition').innerHTML = 'MINECRAFT MODDED';
     document.getElementById('header5').style.display = 'none';
     document.getElementById('gtabs3').classList.add('selected');
@@ -356,7 +358,8 @@ function eaglercontrols(){
     generatelaunchers(launcher);
     document.getElementById('game-bg').style.backgroundImage = 'url(./assets/images/controls-edition.jpg)';
     document.getElementById('game-title').src = './assets/images/controls-title.png';
-    document.getElementById('game-title').classList.remove('web-title');
+    document.getElementById('game-title').classList.remove('web-title', 'modded-title');
+    document.getElementById('game-title').classList.add('controls-title');
     document.getElementById('gameedition').innerHTML = 'MINECRAFT MOBILE/CONTROLLER';
     document.getElementById('header2').style.display = 'none';
     document.getElementById('header5').style.display = 'none';
@@ -444,19 +447,6 @@ function preventMotion(event)
     event.preventDefault();
     event.stopPropagation();
 }
-
-// Username Generator
-let username = document.getElementById('username');
-let userchosen = false;
-if (userchosen === false && !localStorage.getItem("username")) {
-    fetch("https://genr8rs.com/api/Content/Fun/XboxNameGenerator?genr8rsUserId=1748114452.233968321c14391c2&_sGameGenre=any").then((response) => response.json()).then((data) => {
-        if (!data) {return};
-        username.innerHTML = data._sResult;
-        localStorage.setItem("username", data._sResult);
-        userchosen = true;
-    })
-}
-else {username.innerHTML = localStorage.getItem("username")}
 
 generateprofile(1);
 generategames("./assets/json/base.json");

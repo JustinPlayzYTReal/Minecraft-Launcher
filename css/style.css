@@ -233,7 +233,14 @@ hr {
 }
 
 #game-title.web-title {
-    max-width: 543px;
+    width: 543px;
+    height: 148px;
+}
+
+#game-title.modded-title,
+#game-title.controls-title {
+    width: 1003px;
+    height: 157px;
 }
 
 #gameSelection {
