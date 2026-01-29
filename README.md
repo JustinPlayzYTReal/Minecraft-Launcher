@@ -1,5 +1,5 @@
 # <img src="assets/logo.png" alt="Ampler Logo" align="right" width="150px"> Minecraft Launcher v1.4.00
- A minecraft themed launcher<br>
+ A Minecraft themed launcher<br>
  Containing some of the best clients all in one place!  
 
 
